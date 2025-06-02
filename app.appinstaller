@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
     xmlns="http://schemas.microsoft.com/appx/appinstaller/2021"
-    Version="1.0.5.0"
-    Uri="C:\Users\HP\Desktop\girasol\girasol.appinstaller">
+    Version="1.0.2.0"
+    Uri="https://github.com/Yossec/SING-GIRASOL/app.appinstaller">
 
     <MainPackage
         Name="PruebaGirasol"
-        Publisher="CN=Yossec" 
-        Version="1.0.0.0"
+        Publisher="CN=TuAppFirmaCertificado" 
+        Version="1.0.2.0"
         ProcessorArchitecture="x64"
-        Uri="C:\Users\HP\Desktop\girasol\GirasolPESCRL.SignGirasol_1.0.5.0.msix"/>
+        Uri="https://github.com/Yossec/SING-GIRASOL/Programa.msix"/>
 
     <UpdateSettings>
         <OnLaunch 
-            HoursBetweenUpdateChecks="12"
+            HoursBetweenUpdateChecks="0"
             UpdateBlocksActivation="true"
             ShowPrompt="true" />
         <AutomaticBackgroundTask />
