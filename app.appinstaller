@@ -10,6 +10,7 @@
         Version="1.0.2.0"
         Publisher="CN=TuAppFirmaCertificado"
         Name="PruebaGirasol"
+        ProcessorArchitecture="x64"
         />
 
     <UpdateSettings>
