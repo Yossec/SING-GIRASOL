@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    Uri="https://github.com/Yossec/SING-GIRASOL/app.appinstaller"
+    Uri="https://yossec.github.io/SING-GIRASOL/app.appinstaller"
     Version="1.0.2.0"
     xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
     >
 
     <MainPackage
-        Uri="https://github.com/Yossec/SING-GIRASOL/Programa.msix"
+        Uri="https://yossec.github.io/SING-GIRASOL/Programa.msix"
         Version="1.0.2.0"
         Publisher="CN=TuAppFirmaCertificado"
         Name="PruebaGirasol"
