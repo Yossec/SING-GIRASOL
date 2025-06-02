@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2021"
+    Uri="https://github.com/Yossec/SING-GIRASOL/app.appinstaller"
     Version="1.0.2.0"
-    Uri="https://github.com/Yossec/SING-GIRASOL/app.appinstaller">
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
+    >
 
     <MainPackage
-        Name="PruebaGirasol"
-        Publisher="CN=TuAppFirmaCertificado" 
+        Uri="https://github.com/Yossec/SING-GIRASOL/Programa.msix"
         Version="1.0.2.0"
-        ProcessorArchitecture="x64"
-        Uri="https://github.com/Yossec/SING-GIRASOL/Programa.msix"/>
+        Publisher="CN=TuAppFirmaCertificado"
+        Name="PruebaGirasol"
+        />
 
     <UpdateSettings>
         <OnLaunch 
