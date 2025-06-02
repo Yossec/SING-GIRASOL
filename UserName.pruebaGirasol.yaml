@@ -1,0 +1,24 @@
+# MSIX Conversion Accelerator
+
+PackageName: pruebaGirasol
+
+PublisherName: User Name
+
+PackageVersion: 1.0.3.0
+
+EligibleForConversion: Yes
+
+ConversionStatus: Package Created. Need Validation
+
+Edition: Microsoft Windows 10 Pro
+
+MinimumOSVersion: 22H2
+
+MinimumOSBuild: 19045.3803
+
+Architecture: 64
+
+MSIXConversionToolVersion: 1.2024.405.0
+
+AcceleratorVersion: 1.0.0
+
