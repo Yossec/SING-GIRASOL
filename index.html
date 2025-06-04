@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abrir app con esquema personalizado</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background: #f0f4f8;
+  }
+  form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  a.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: #17a2b8;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a.btn:hover {
+    background-color: #138496;
+  }
+</style>
+</head>
+<body>
+
+<h2>Abrir app con esquema personalizado</h2>
+
+<form id="openAppForm">
+  <label for="from">From (URL de descarga):</label>
+  <input type="text" id="from" name="from" value="https://app.firmeasy.legal/digital/archivos/sign_download/d8b5a1f7-24c3-4346-b10c-76033d5c3446" required />
+  
+  <label for="to">To (URL de subida):</label>
+  <input type="text" id="to" name="to" value="https://app.firmeasy.legal/digital/archivos/sign_upload/d8b5a1f7-24c3-4346-b10c-76033d5c3446" required />
+  
+  <label for="vis_sig_x">vis_sig_x:</label>
+  <input type="number" id="vis_sig_x" name="vis_sig_x" value="296" required />
+  
+  <label for="vis_sig_y">vis_sig_y:</label>
+  <input type="number" id="vis_sig_y" name="vis_sig_y" value="34" required />
+  
+  <label for="vis_sig_width">vis_sig_width:</label>
+  <input type="number" id="vis_sig_width" name="vis_sig_width" value="150" required />
+  
+  <label for="vis_sig_height">vis_sig_height:</label>
+  <input type="number" id="vis_sig_height" name="vis_sig_height" value="40" required />
+  
+  <label for="vis_sig_text">vis_sig_text:</label>
+  <textarea id="vis_sig_text" name="vis_sig_text" rows="4" required>&lt;SIGNER&gt;
+Fecha: &lt;DATE&gt;
+OU: &lt;OU&gt;
+Firmado por: Firmeasy.legal</textarea>
+  
+  <label for="vis_sig_page">vis_sig_page:</label>
+  <input type="number" id="vis_sig_page" name="vis_sig_page" value="1" required />
+  
+  <label for="vis_sig_text_size">vis_sig_text_size:</label>
+  <input type="number" id="vis_sig_text_size" name="vis_sig_text_size" value="6" required />
+  
+  <label for="tlv">tlv:</label>
+  <input type="number" id="tlv" name="tlv" value="1" required />
+
+  <a href="#" id="openAppLink" class="btn" target="_self">Abrir App</a>
+</form>
+
+<script>
+  const form = document.getElementById('openAppForm');
+  const openAppLink = document.getElementById('openAppLink');
+
+  function updateLink() {
+    // Obtener valores y codificar
+    const from = encodeURIComponent(form.from.value.trim());
+    const to = encodeURIComponent(form.to.value.trim());
+    const vis_sig_x = encodeURIComponent(form.vis_sig_x.value.trim());
+    const vis_sig_y = encodeURIComponent(form.vis_sig_y.value.trim());
+    const vis_sig_width = encodeURIComponent(form.vis_sig_width.value.trim());
+    const vis_sig_height = encodeURIComponent(form.vis_sig_height.value.trim());
+    const vis_sig_text = encodeURIComponent(form.vis_sig_text.value.trim());
+    const vis_sig_page = encodeURIComponent(form.vis_sig_page.value.trim());
+    const vis_sig_text_size = encodeURIComponent(form.vis_sig_text_size.value.trim());
+    const tlv = encodeURIComponent(form.tlv.value.trim());
+
+    const url = `miappmaui://?from=${from}&to=${to}&vis_sig_x=${vis_sig_x}&vis_sig_y=${vis_sig_y}&vis_sig_width=${vis_sig_width}&vis_sig_height=${vis_sig_height}&vis_sig_text=${vis_sig_text}&vis_sig_page=${vis_sig_page}&vis_sig_text_size=${vis_sig_text_size}&tlv=${tlv}`;
+
+    openAppLink.href = url;
+  }
+
+  // Actualizar link cuando cambien inputs
+  form.addEventListener('input', updateLink);
+
+  // Inicializar al cargar
+  updateLink();
+</script>
+
+</body>
+</html>
